@@ -1,7 +1,7 @@
 package com.example.demo.Beans;
 
 public class OTPCheck {
-      private String eamilId;
+      private String emailId;
       private String otp;
       private String password;
 	public String getPassword() {
@@ -11,10 +11,10 @@ public class OTPCheck {
 		this.password = password;
 	}
 	public String getEamilId() {
-		return eamilId;
+		return emailId;
 	}
 	public void setEamilId(String eamilId) {
-		this.eamilId = eamilId;
+		this.emailId = eamilId;
 	}
 	public String getOtp() {
 		return otp;

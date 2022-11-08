@@ -1,6 +1,5 @@
 package com.example.demo.Repositories;
 
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -8,5 +7,5 @@ import com.example.demo.Entities.AuthenticationEntity;
 
 public interface LoginDetailsRepo extends JpaRepository<AuthenticationEntity, Long>{
 	
-	AuthenticationEntity findByEmailIdAndIsActiveTrue(String EmailId);
+	AuthenticationEntity findByEmailIdAndIsActiveTrue(String emailId);
 }

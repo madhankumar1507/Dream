@@ -1,0 +1,19 @@
+<p>fget otp to your registered mail</p>
+
+<label>email</label>
+    <input type="text" [(ngModel)]="email">
+    <span *ngIf="span1">Please enter valid mail</span>
+<button *ngIf="!k" (click)="GetOtp()">Get Otp</button>
+<div *ngIf="k">
+    <label>enter otp</label>
+    <button *ngIf="!k" (click)="GetOtp()">Resend Otp</button>
+    <input type="text" [(ngModel)]="otp">
+    <span *ngIf="span2">Please enter valid OTP</span>
+    <button (click)="sendOtp()"></button>
+</div>
+<div *ngIf="m">
+    <label>Enter new password</label>
+    <input type="text" [(ngModel)]="email">
+    <label>confirm password</label>
+    <input type="text" [(ngModel)]="email">
+</div>
