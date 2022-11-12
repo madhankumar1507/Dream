@@ -19,4 +19,7 @@ export class HomeserviceService {
  CheckOtp(data:CheckOtp): Observable<any>{
   return this.httpClient.post("http://localhost:8080/v1/otpCheck",data,{responseType: 'text'});
  }
+ SaveNewPassword(data:CheckOtp): Observable<any>{
+  return this.httpClient.post("http://localhost:8080/v1/saveNewPassword",data,{responseType: 'text'});
+ }
 }

@@ -82,7 +82,7 @@ public class LoginDetailsServices {
 	}
 	public String otpCheck(OTPCheck request) {
 		String response = "";
-		AuthenticationEntity authenticationDetails = loginDetailaRepo.findByEmailIdAndIsActiveTrue(request.getEamilId());
+		AuthenticationEntity authenticationDetails = loginDetailaRepo.findByEmailIdAndIsActiveTrue(request.getEmailId());
 		if(authenticationDetails!=null) {
 			if(authenticationDetails.getChecker().equals(request.getOtp())) {
 				response = Constants.YES;
@@ -98,11 +98,16 @@ public class LoginDetailsServices {
 	}
 	
 	public String saveNewPassword(OTPCheck request) {
-		AuthenticationEntity authenticationDetails = loginDetailaRepo.findByEmailIdAndIsActiveTrue(request.getEamilId());
+		AuthenticationEntity authenticationDetails = loginDetailaRepo.findByEmailIdAndIsActiveTrue(request.getEmailId());
 		if(authenticationDetails!=null) {
-			if(null!=request.getPassword())
-			authenticationDetails.setPassword(request.getPassword());
-			return "Passwor updated Successfully";
+			if(null!=request.getPassword()) {
+				authenticationDetails.setPassword(request.getPassword());
+				loginDetailaRepo.save(authenticationDetails);
+				return "Password updated Successfully";
+			}
+			else {
+				return "Password is null";
+			}
 		}
 		else {
 			return "Something wrong in saving password";

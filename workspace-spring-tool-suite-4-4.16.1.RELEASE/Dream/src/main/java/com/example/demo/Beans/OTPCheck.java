@@ -10,11 +10,11 @@ public class OTPCheck {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getEamilId() {
+	public String getEmailId() {
 		return emailId;
 	}
-	public void setEamilId(String eamilId) {
-		this.emailId = eamilId;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
 	public String getOtp() {
 		return otp;
